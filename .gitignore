@@ -1,0 +1,4 @@
+### Maven template
+target/
+*.iml
+.idea

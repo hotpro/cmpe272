@@ -7,7 +7,7 @@ http://www.springframework.org/schema/security/spring-security.xsd">
 
 	<http auto-config="true" use-expressions="true">
 		<form-login
-			login-page="/login.html" 
+			login-page="/login-1.html" 
 			default-target-url="/user/"
 			authentication-failure-url="/login.html?error" 
 			username-parameter="username"
@@ -17,7 +17,7 @@ http://www.springframework.org/schema/security/spring-security.xsd">
 			authentication-success-handler-ref="loginSuccessHandler"/>
 			
 		<logout logout-url="/logout.html"
-				logout-success-url="/login.html"
+				logout-success-url="/login-1.html"
 				invalidate-session="true" 
 				delete-cookies="JSESSIONID" />
 				

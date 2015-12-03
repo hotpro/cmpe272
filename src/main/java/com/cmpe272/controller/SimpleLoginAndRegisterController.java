@@ -15,17 +15,23 @@ public class SimpleLoginAndRegisterController {
 	@Autowired
 	AccountInfoDAO accountInfoDAO;
 
-	@RequestMapping(value="/register.html")
+	@RequestMapping(value="/register-1.html")
 	public String registerView(){
-		return "register";
+		return "register-1";
 	}
+	
 
+	@RequestMapping(value="/forgot-password.html")
+	public String findPassView(){
+		return "forgot-password";
+	}
+	
 	@RequestMapping(value="/")
 	public String rootView(){
-		return "redirect:/login.html";
+		return "redirect:/login-1.html";
 	}
 
-	@RequestMapping(value = "/register", method = RequestMethod.POST)
+	@RequestMapping(value = "/register-1", method = RequestMethod.POST)
 	public String register(@RequestParam String lastname,
 						@RequestParam String firstname,
 						@RequestParam String address,
@@ -35,15 +41,15 @@ public class SimpleLoginAndRegisterController {
 						@RequestParam String creditCard) {
 		AccountInfo accountInfo = new AccountInfo(lastname,firstname,address,email,phone,password,creditCard);
 		if (accountInfo!=null&&accountInfoDAO.insert(accountInfo)) {
-			return "login";
+			return "login-1";
 		} else {
-			return "register";
+			return "register-1";
 		}
 	}
 	
-	@RequestMapping(value="/login.html")
+	@RequestMapping(value="/login-1.html")
 	public String loginView(){
-		return "login";
+		return "login-1";
 	}
 
 }

@@ -22,7 +22,7 @@ http://www.springframework.org/schema/security/spring-security.xsd">
 				delete-cookies="JSESSIONID" />
 				
 		<intercept-url pattern="/sensor/**" access="permitAll"/>
-		<intercept-url pattern="/login.html" access="permitAll"/>
+		<intercept-url pattern="/login-1.html" access="permitAll"/>
 		<intercept-url pattern="/resources/**" access="permitAll"/>
 		<intercept-url pattern="/user/**" access="hasRole('ROLE_USER')"/>
 		<intercept-url pattern="/admin/**" access="hasRole('ROLE_ADMIN')"/>

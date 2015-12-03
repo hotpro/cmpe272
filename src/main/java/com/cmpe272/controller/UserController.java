@@ -29,7 +29,7 @@ public class UserController {
 
 	@RequestMapping("/")
 	public String homeView(){
-		return "home";
+		return "index";
 	}
 
 	@RequestMapping("/addSensorView")

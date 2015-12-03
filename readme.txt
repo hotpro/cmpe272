@@ -11,10 +11,13 @@ AccountInfo {
 }
 
 Food {
-    String id;
-    String name;
-    String expiredDate;
-    String discount;
+    private int rowID;
+
+    private String productName;
+
+    private String expirationDate;
+
+    private double discount;
 }
 
 Rule {
@@ -49,4 +52,11 @@ Food List
 "/food/expired", method = RequestMethod.GET
 
 "/food/expired/{days}", method = RequestMethod.GET
+
+
+
+Set strategy
+"/food/expired/{days}/{discount}", method = RequestMethod.POST
+"SUCCESS", "FAIL"
+
 

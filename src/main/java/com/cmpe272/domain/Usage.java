@@ -1,7 +1,6 @@
 package com.cmpe272.domain;
 
 /**
- * Created by WU on 17/11/2015.
  */
 public class Usage {
     public Usage() {};

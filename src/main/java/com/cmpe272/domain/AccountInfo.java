@@ -3,7 +3,6 @@ package com.cmpe272.domain;
 import org.bson.types.ObjectId;
 
 /**
- * Created by WU on 17/11/2015.
  */
 public class AccountInfo {
 

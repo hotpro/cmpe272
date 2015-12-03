@@ -3,7 +3,6 @@ package com.cmpe272.domain;
 import org.bson.types.ObjectId;
 
 /**
- * Created by xiaofengli on 11/30/15.
  */
 public class Sensor {
 

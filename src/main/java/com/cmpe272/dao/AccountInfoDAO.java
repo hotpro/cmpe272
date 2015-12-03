@@ -17,9 +17,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by WU on 17/11/2015.
- */
 @Component
 public class AccountInfoDAO {
     static MongoCollection mongoCollection = null;

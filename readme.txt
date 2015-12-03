@@ -13,7 +13,7 @@ AccountInfo {
 Food {
     String id;
     String name;
-    long expiredDate;
+    String expiredDate;
     String discount;
 }
 
@@ -26,8 +26,6 @@ Notification {
     Food food;
     Rule rule;
 }
-
-
 
 
 Registration

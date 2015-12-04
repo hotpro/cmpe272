@@ -1,9 +1,9 @@
 package com.cmpe272.dao;
 
+import com.cmpe272.domain.DataPoint;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.cmpe272.domain.DataPoint;
 import com.mongodb.MongoClient;
 import com.mongodb.MongoClientURI;
 import com.mongodb.client.FindIterable;

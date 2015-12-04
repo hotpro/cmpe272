@@ -13,6 +13,7 @@ import com.mongodb.client.MongoDatabase;
 import org.bson.Document;
 import org.springframework.stereotype.Component;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -22,11 +23,11 @@ import java.util.List;
  * Created by yutao on 12/3/15.
  */
 @Component
-public class FoodDAO {
+public class TestDAO {
     private static MongoCollection mongoCollection = null;
     private static ObjectMapper objectMapper = null;
 
-    public FoodDAO() {
+    public TestDAO() {
         if (objectMapper == null) {
             objectMapper = new ObjectMapper();
             objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
@@ -36,7 +37,7 @@ public class FoodDAO {
             MongoClientURI mongoClientURI = new MongoClientURI(Constant.MONGODB_URL);
             MongoClient mongoClient = new MongoClient(mongoClientURI);
             MongoDatabase mongoDatabase = mongoClient.getDatabase(Constant.DB_NAME);
-            mongoCollection = mongoDatabase.getCollection("food");
+            mongoCollection = mongoDatabase.getCollection("test");
         }
     }
 
@@ -49,6 +50,25 @@ public class FoodDAO {
         return list;
     }
 
+    private static final SimpleDateFormat FORMAT = new SimpleDateFormat("MM/dd/yy");
+    public void changeDate() {
+        FindIterable<Document> iterable = mongoCollection.find();
+        for (Document document : iterable) {
+            String s = document.getString("ExpirationDate");
+            int rowID = document.getInteger("RowID");
+            Date date = null;
+            try {
+                date = FORMAT.parse(s);
+
+//                mongoCollection.updateOne(new Document("RowID", rowID),
+//                        new Document("$set", new Document("Date", date)));
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+            System.out.println(date);
+        }
+    }
+
     public List<Food> findByRange(Date start, Date end) {
         BasicDBObject basicDBObject = new BasicDBObject();
         basicDBObject.put("Date", BasicDBObjectBuilder.start("$gte", start).add("$lte", end).get());
@@ -59,16 +79,5 @@ public class FoodDAO {
             list.add(FoodDAO.parseFood(document));
         }
         return list;
-    }
-
-    private static final SimpleDateFormat FORMAT = new SimpleDateFormat("MM/dd/yyyy");
-    public static Food parseFood(Document document) {
-        Food food = new Food();
-        food.setDiscount(document.getDouble("Discount"));
-        Date date = document.getDate("Date");
-        food.setExpirationDate(FORMAT.format(date));
-        food.setProductName(document.getString("ProductName"));
-        food.setRowID(document.getInteger("RowID"));
-        return food;
     }
 }

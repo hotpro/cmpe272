@@ -8,6 +8,9 @@ angular.module('userApp', [ 'ngRoute' ])
 	}).when('/addSensorView/', {
 		controller : 'AddSensorViewController',
 		templateUrl : "user/addSensorView"
+	}).when('/foodList', {
+		controller : 'foodListController',
+		templateUrl : "user/foodList"
 	}).when('/sensorListView/', {
 		controller : 'SensorListViewController',
 		templateUrl : "user/sensorListView"
@@ -33,6 +36,11 @@ angular.module('userApp', [ 'ngRoute' ])
 			});
 		}
 	}
+
+})
+.controller('foodListController', function($scope,$http,$location) {
+
+	$scope.food = {};
 
 })
 

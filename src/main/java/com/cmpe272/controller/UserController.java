@@ -29,13 +29,23 @@ public class UserController {
 
 	@RequestMapping("/")
 	public String homeView(){
-		return "home";
+		return "index";
 	}
 
 	@RequestMapping("/addSensorView")
 	public String addSensorView(){
 		return "addSensorView";
 	}
+	
+	@RequestMapping("/foodList.html")
+	public String foodList(){
+		return "foodList";
+	}
+	
+//	@RequestMapping("/index")
+//	public String indexView(){
+//		return "index";
+//	}
 
 	@RequestMapping(value = "/sensor",method = RequestMethod.POST)
 	@ResponseBody

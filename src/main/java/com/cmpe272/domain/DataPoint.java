@@ -4,7 +4,6 @@ import org.bson.types.ObjectId;
 import org.codehaus.jackson.annotate.JsonProperty;
 
 /**
- * Created by WU on 17/11/2015.
  */
 public class DataPoint {
 

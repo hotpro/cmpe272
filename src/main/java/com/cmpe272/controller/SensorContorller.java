@@ -9,7 +9,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 /**
- * Created by xiaofengli on 11/30/15.
  */
 
 @Controller

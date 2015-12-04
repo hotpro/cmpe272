@@ -20,7 +20,8 @@ http://www.springframework.org/schema/security/spring-security.xsd">
 				logout-success-url="/login-1.html"
 				invalidate-session="true" 
 				delete-cookies="JSESSIONID" />
-				
+
+		<intercept-url pattern="/food/**" access="permitAll"/>
 		<intercept-url pattern="/sensor/**" access="permitAll"/>
 		<intercept-url pattern="/login-1.html" access="permitAll"/>
 		<intercept-url pattern="/resources/**" access="permitAll"/>

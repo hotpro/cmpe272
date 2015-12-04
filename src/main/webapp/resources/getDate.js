@@ -8,7 +8,7 @@ $(function() {
 				var txt = '';
 				txt += "<tr><td>" + item.ProductName + "</td><td>" + item.RowID
 						+ "</td><td>" + item.ExpirationDate + "</td><td>"
-						+ item.Discount + "</td></tr>";
+						+ item.discountMsg + "</td></tr>";
 				$food.append(txt);
 
 			});

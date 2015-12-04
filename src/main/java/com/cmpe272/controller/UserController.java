@@ -36,10 +36,16 @@ public class UserController {
 	public String addSensorView(){
 		return "addSensorView";
 	}
-	@RequestMapping("/index")
-	public String indexView(){
-		return "index";
+	
+	@RequestMapping("/foodList.html")
+	public String foodList(){
+		return "foodList";
 	}
+	
+//	@RequestMapping("/index")
+//	public String indexView(){
+//		return "index";
+//	}
 
 	@RequestMapping(value = "/sensor",method = RequestMethod.POST)
 	@ResponseBody

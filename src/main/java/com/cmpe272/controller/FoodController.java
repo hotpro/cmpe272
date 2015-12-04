@@ -1,7 +1,6 @@
 package com.cmpe272.controller;
 
 import com.cmpe272.dao.FoodDAO;
-import com.cmpe272.dao.TestDAO;
 import com.cmpe272.domain.Food;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -23,15 +22,10 @@ public class FoodController {
     @Autowired
     private FoodDAO foodDAO;
 
-    @Autowired
-    private TestDAO testDAO;
-
     @RequestMapping(method = RequestMethod.GET)
     @ResponseBody
     public List<Food> getAllFood() {
-        testDAO.changeDate();
-        return testDAO.findAll();
-//        return foodDAO.findAll();
+        return foodDAO.findAll();
     }
 
     @RequestMapping(value = "/expired", method = RequestMethod.GET)
@@ -39,10 +33,9 @@ public class FoodController {
     public List<Food> getAllExpiredFood() {
         Calendar cal = getCalendar();
         Date start = cal.getTime();
-        cal.add(Calendar.DAY_OF_MONTH, 30);
+        cal.add(Calendar.DAY_OF_MONTH, 21);
         Date end = cal.getTime();
-//        List<Food> list = foodDAO.findByRange(start, end);
-        List<Food> list = testDAO.findByRange(start, end);
+        List<Food> list = foodDAO.findByRange(start, end);
         return list;
     }
 
@@ -61,7 +54,7 @@ public class FoodController {
         Calendar cal = getCalendar();
         cal.add(Calendar.DAY_OF_MONTH, days);
         Date end = cal.getTime();
-        cal.add(Calendar.DAY_OF_MONTH, -10);
+        cal.add(Calendar.DAY_OF_MONTH, -7);
         Date start = cal.getTime();
         List<Food> list = foodDAO.findByRange(start, end);
         return list;
@@ -69,8 +62,15 @@ public class FoodController {
 
     @RequestMapping(value = "/expired/{days}/{discount}", method = RequestMethod.POST)
     @ResponseBody
-    public String setStrategy() {
-        return "SUCCESS";
+    public String setStrategy(@PathVariable int days, @PathVariable int discount) {
+        Calendar cal = getCalendar();
+        cal.add(Calendar.DAY_OF_MONTH, days);
+        Date end = cal.getTime();
+        cal.add(Calendar.DAY_OF_MONTH, -7);
+        Date start = cal.getTime();
+        boolean result = foodDAO.setFoodDiscount(start, end, discount * 1.0 / 10);
+
+        return result ? "SUCCESS" : "FAIL";
     }
 
     @RequestMapping(value = "/discount", method = RequestMethod.DELETE)

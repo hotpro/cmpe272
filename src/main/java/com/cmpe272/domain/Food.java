@@ -18,6 +18,16 @@ public class Food {
     @JsonProperty("Discount")
     private double discount;
 
+    private String discountMsg;
+
+    public String getDiscountMsg() {
+        return discountMsg;
+    }
+
+    public void setDiscountMsg(String discountMsg) {
+        this.discountMsg = discountMsg;
+    }
+
     public int getRowID() {
         return rowID;
     }

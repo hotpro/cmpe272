@@ -10,9 +10,11 @@ import com.mongodb.MongoClientURI;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.result.UpdateResult;
 import org.bson.Document;
 import org.springframework.stereotype.Component;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -44,9 +46,32 @@ public class FoodDAO {
         List<Food> list = new ArrayList<>();
         FindIterable<Document> iterable = mongoCollection.find();
         for (Document document : iterable) {
-            list.add(FoodDAO.parseFood(document));
+            try {
+                list.add(FoodDAO.parseFood(document));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
         return list;
+    }
+
+    private static final SimpleDateFormat PARSE_FORMAT = new SimpleDateFormat("MM/dd/yy");
+    public void changeDate() {
+        FindIterable<Document> iterable = mongoCollection.find();
+        for (Document document : iterable) {
+            String s = document.getString("ExpirationDate");
+            int rowID = document.getInteger("RowID");
+            Date date = null;
+            try {
+                date = PARSE_FORMAT.parse(s);
+                mongoCollection.updateOne(new Document("RowID", rowID),
+                        new Document("$set", new Document("Date", date)));
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+
+            System.out.println(date);
+        }
     }
 
     public List<Food> findByRange(Date start, Date end) {
@@ -56,19 +81,47 @@ public class FoodDAO {
 
         List<Food> list = new ArrayList<>();
         for (Document document : iterable) {
-            list.add(FoodDAO.parseFood(document));
+            try {
+                list.add(FoodDAO.parseFood(document));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
         return list;
     }
 
     private static final SimpleDateFormat FORMAT = new SimpleDateFormat("MM/dd/yyyy");
-    public static Food parseFood(Document document) {
+    public static Food parseFood(Document document) throws Exception {
         Food food = new Food();
-        food.setDiscount(document.getDouble("Discount"));
+        Object object = document.get("Discount");
+        double discount = 0;
+        if (object instanceof Double) {
+            discount = document.getDouble("Discount");
+        } else if (object instanceof Integer) {
+            discount = document.getInteger("Discount").intValue();
+        }
+        food.setDiscount(discount);
         Date date = document.getDate("Date");
+        if (discount > 0) {
+            String discountMsg = (int)(discount * 100) + " % OFF";
+            food.setDiscountMsg(discountMsg);
+        } else if (discount < 0) {
+            food.setDiscountMsg("Donated");
+        } else {
+            food.setDiscountMsg("");
+        }
         food.setExpirationDate(FORMAT.format(date));
         food.setProductName(document.getString("ProductName"));
         food.setRowID(document.getInteger("RowID"));
         return food;
     }
+
+    public boolean setFoodDiscount(Date start, Date end, double discount) {
+        BasicDBObject query = new BasicDBObject();
+        query.put("Date", BasicDBObjectBuilder.start("$gte", start).add("$lte", end).get());
+        UpdateResult result = mongoCollection.updateMany(query, new Document("$set",
+                new Document("Discount", discount)));
+        return result.wasAcknowledged();
+    }
+
 }

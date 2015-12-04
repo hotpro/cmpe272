@@ -45,7 +45,11 @@ public class TestDAO {
         List<Food> list = new ArrayList<>();
         FindIterable<Document> iterable = mongoCollection.find();
         for (Document document : iterable) {
-            list.add(FoodDAO.parseFood(document));
+            try {
+                list.add(FoodDAO.parseFood(document));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
         return list;
     }
@@ -76,7 +80,11 @@ public class TestDAO {
 
         List<Food> list = new ArrayList<>();
         for (Document document : iterable) {
-            list.add(FoodDAO.parseFood(document));
+            try {
+                list.add(FoodDAO.parseFood(document));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
         return list;
     }

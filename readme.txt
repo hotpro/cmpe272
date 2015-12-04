@@ -36,27 +36,28 @@ Registration
 http://localhost:8080/register?name=user1&password=user1
 	return user's accountInfo
 
-User Deregister
-         /user/deregister", method = RequestMethod.DELETE
-	when log in, user can directly delete his account from database
-	void
-
-Admin Deregister
-"/admin/deregister/{name}", method = RequestMethod.DELETE
-http://localhost:8080/admin/deregister/user1
-void
-
 Food List
 "/food/", method = RequestMethod.GET
+get all the food
 
 "/food/expired", method = RequestMethod.GET
+get all the food that will expire within 3 weeks
 
 "/food/expired/{days}", method = RequestMethod.GET
-
+days: 21, 14, 7
+21: get all the food that will expire from 2 weeks later to 3 weeks later
+14: get all the food that will expire from 1 week later to 2 weeks later
+7: get all the food that will expire within 1 week
 
 
 Set strategy
 "/food/expired/{days}/{discount}", method = RequestMethod.POST
-"SUCCESS", "FAIL"
+days: 21, 14, 7
+21: get all the food that will expire from 2 weeks later to 3 weeks later
+14: get all the food that will expire from 1 week later to 2 weeks later
+7: get all the food that will expire within 1 week
+discount: 9: 90 % OFF,  1: 10 % OFF, -1: Donated
+
+return "SUCCESS", "FAIL"
 
 

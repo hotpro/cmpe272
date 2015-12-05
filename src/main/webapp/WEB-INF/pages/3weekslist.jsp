@@ -218,7 +218,7 @@
 
 				<div class="row">
 					<div class="col-lg-6">
-						<h2>Food List</h2>
+						<h2>3 weeks left food</h2>
 						<div class="table-responsive">
 							<table id="foodlist" class="table table-bordered table-hover">
 								<thead>

@@ -218,7 +218,7 @@
 
 				<div class="row">
 					<div class="col-lg-6">
-						<h2>Food List</h2>
+						<h2>1 week left food</h2>
 						<div class="table-responsive">
 							<table id="foodlist" class="table table-bordered table-hover">
 								<thead>
@@ -247,7 +247,7 @@
 						</div>
 					</div>
 					<div class="col-lg-6">
-						<div class="form-group">
+						<div class="form-group ">
 							<label>Please select the strategy</label> <select
 								class="form-control">
 								<option>10% discount</option>

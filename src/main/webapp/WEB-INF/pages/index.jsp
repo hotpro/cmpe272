@@ -172,9 +172,9 @@
 							Query <i class="fa fa-fw fa-caret-down"></i></a>
 						<ul id="demo" class="collapse">
 							<li><a href="user/foodList.html" class = "disinline">Food List</a></li>
-							<li><a href="#">3 weeks left food</a></li>
-							<li><a href="#">2 weeks left food</a></li>
-							<li><a href="#">1 week left food</a></li>
+							<li><a href="user/3weekslist.html">3 weeks left food</a></li>
+							<li><a href="user/2weekslist.html">2 weeks left food</a></li>
+							<li><a href="user/1weeklist.html">1 week left food</a></li>
 						</ul></li>
 					<li><a href="charts.html"><i
 							class="fa fa-fw fa-bar-chart-o"></i> Charts</a></li>

@@ -42,6 +42,21 @@ public class UserController {
 		return "foodList";
 	}
 	
+	@RequestMapping("/3weekslist.html")
+	public String threeweekslist(){
+		return "3weekslist";
+	}
+	
+	@RequestMapping("/2weekslist.html")
+	public String twoweekslist(){
+		return "2weekslist";
+	}
+	
+	@RequestMapping("/1weeklist.html")
+	public String oneweeklist(){
+		return "1weeklist";
+	}
+	
 //	@RequestMapping("/index")
 //	public String indexView(){
 //		return "index";

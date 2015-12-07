@@ -44,7 +44,7 @@ public class FoodDAO {
 
     public List<Food> findAll() {
         List<Food> list = new ArrayList<>();
-        FindIterable<Document> iterable = mongoCollection.find().limit(10);
+        FindIterable<Document> iterable = mongoCollection.find();
         for (Document document : iterable) {
             try {
                 list.add(FoodDAO.parseFood(document));

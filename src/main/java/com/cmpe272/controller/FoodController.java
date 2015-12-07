@@ -1,6 +1,7 @@
 package com.cmpe272.controller;
 
 import com.cmpe272.dao.FoodDAO;
+import com.cmpe272.domain.DonationHistory;
 import com.cmpe272.domain.Food;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -72,6 +73,24 @@ public class FoodController {
 
         return result ? "SUCCESS" : "FAIL";
     }
+
+    @RequestMapping(value = "/analysis/donation", method = RequestMethod.GET)
+    @ResponseBody
+    public DonationHistory getDonationHistory() {
+        DonationHistory donationHistory = new DonationHistory();
+        donationHistory.years = new String[]{"2015", "2016", "2017", "2018", "2019"};
+        donationHistory.numbers = new int[] {1000, 800, 900, 700, 50};
+        return donationHistory;
+    }
+
+//    @RequestMapping(value = "/analysis/donation", method = RequestMethod.GET)
+//    @ResponseBody
+//    public DonationHistory getDonationHistory() {
+//        DonationHistory donationHistory = new DonationHistory();
+//        donationHistory.years = new String[]{"2015", "2016", "2017", "2018", "2019"};
+//        donationHistory.numbers = new int[] {1000, 800, 900, 700, 50};
+//        return donationHistory;
+//    }
 
     @RequestMapping(value = "/discount", method = RequestMethod.DELETE)
     @ResponseBody

@@ -60,4 +60,15 @@ discount: 9: 90 % OFF,  1: 10 % OFF, -1: Donated
 
 return "SUCCESS", "FAIL"
 
+"/food/analysis/donation"
+{
+    years:["2015", "2016", "2017", "2018", "2019"],
+    numbers:[1000, 800, 900, 700, 500]
+}
+
+"/food/analysis/discount"
+{
+    top5discount:["90 % OFF", "20 % OFF", "70 % OFF", "40 % OFF", "50 % OFF", ],
+    numbers:[1000, 900, 800, 700, 500]
+}
 

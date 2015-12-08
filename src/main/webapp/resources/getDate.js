@@ -1,5 +1,6 @@
 $(function() {
 	var $food = $('#foodlist');
+	
 	$.ajax({
 		type : 'GET',
 		url : '/CMPE272/food',
@@ -10,8 +11,10 @@ $(function() {
 						+ "</td><td>" + item.ExpirationDate + "</td><td>"
 						+ item.discountMsg + "</td></tr>";
 				$food.append(txt);
-
 			});
+		},
+		error: function(){
+			alert('error load data!');
 		}
 	});
 });

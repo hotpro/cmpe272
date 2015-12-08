@@ -52,8 +52,10 @@
 <script type="text/javascript" src="resources/angular-route.js"></script>
 <script type="text/javascript" src="resources/userApp.js"></script>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script type="text/javascript" src="resources/getDate.js"></script>
+<script type="text/javascript" src="resources/postData.js"></script>
 </head>
 
 <body>
@@ -174,7 +176,8 @@
 						data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Food
 							Query <i class="fa fa-fw fa-caret-down"></i></a>
 						<ul id="demo" class="collapse in">
-							<li><a href="user/foodList.html" class = "disinline">Food List</a></li>
+							<li><a href="user/foodList.html" class="disinline">Food
+									List</a></li>
 							<li><a href="user/3weekslist.html">3 weeks left food</a></li>
 							<li><a href="user/2weekslist.html">2 weeks left food</a></li>
 							<li><a href="user/1weeklist.html">1 week left food</a></li>
@@ -236,49 +239,48 @@
 						</div>
 					</div>
 					<div class="col-lg-6">
-						<div class="form-group margintop45">
-							<label>Please select the food list you want to discount</label> <select
-								class="form-control">
-								<option>food list</option>
-								<option>3 weeks left food</option>
-								<option>2 weeks left food</option>
-								<option>1 week left food</option>
-							</select>
-						</div>
+						<!-- <form role="form" id = "set"> -->
+							<div class="form-group margintop45">
+								<label>Please select the food list you want to discount</label>
+								<select class="form-control" id="list">
+									<option>food list</option>
+									<option value="21">3 weeks left food</option>
+									<option value="14">2 weeks left food</option>
+									<option value="7">1 week left food</option>
+								</select>
+							</div>
+
+							<div class="form-group ">
+								<label>Please select the strategy</label> <select
+									class="form-control" id="select">
+									<option value="1">10% discount</option>
+									<option value="5">50% discount</option>
+									<!--<option>30% discount</option>  -->
+									<option value="-1">donate</option>
+								</select>
+								<div class="margintop">
+									<button id="submit" type="submit" class="btn btn-default">Submit</button>
+								</div>
+							</div>
+<!-- 						</form> -->
 					</div>
-					<div class="col-lg-6">
-						<div class="form-group ">
-							<label>Please select the strategy</label> <select
-								class="form-control">
-								<option>10% discount</option>
-								<option>20% discount</option>
-								<option>30% discount</option>
-								<option>donate</option>
-							</select>
-							<div class = "margintop">
-							<button type="submit" class="btn btn-default">Submit</button></div>
-						</div>
-						
-					</div>
+
+					<!-- /.row -->
+
 				</div>
-				
-				<!-- /.row -->
+				<!-- /.container-fluid -->
 
 			</div>
-			<!-- /.container-fluid -->
+			<!-- /#page-wrapper -->
 
 		</div>
-		<!-- /#page-wrapper -->
+		<!-- /#wrapper -->
 
-	</div>
-	<!-- /#wrapper -->
+		<!-- jQuery -->
+		<script src="resources/js/jquery.js"></script>
 
-	<!-- jQuery -->
-	<script src="resources/js/jquery.js"></script>
-
-	<!-- Bootstrap Core JavaScript -->
-	<script src="resources/js/bootstrap.min.js"></script>
-
+		<!-- Bootstrap Core JavaScript -->
+		<script src="resources/js/bootstrap.min.js"></script>
 </body>
 
 </html>

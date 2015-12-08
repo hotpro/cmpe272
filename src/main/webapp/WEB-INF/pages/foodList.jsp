@@ -179,7 +179,7 @@
 							<li><a href="user/2weekslist.html">2 weeks left food</a></li>
 							<li><a href="user/1weeklist.html">1 week left food</a></li>
 						</ul></li>
-					<li><a href="charts.html"><i
+					<!-- <li><a href="charts.html"><i
 							class="fa fa-fw fa-bar-chart-o"></i> Charts</a></li>
 					<li><a href="tables.html"><i class="fa fa-fw fa-table"></i>
 							Tables</a></li>
@@ -193,7 +193,7 @@
 					<li><a href="blank-page.html"><i class="fa fa-fw fa-file"></i>
 							Blank Page</a></li>
 					<li><a href="index-rtl.html"><i
-							class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a></li>
+							class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a></li> -->
 				</ul>
 			</div>
 			<!-- /.navbar-collapse -->
@@ -220,7 +220,7 @@
 					<div class="col-lg-6">
 						<h2>Food List</h2>
 						<div class="table-responsive">
-							<table id="foodlist" class="table table-bordered table-hover">
+							<table id="foodlist" class="table table1 table-bordered table-hover" name="all">
 								<thead>
 									<tr>
 										<th>Food Name</th>

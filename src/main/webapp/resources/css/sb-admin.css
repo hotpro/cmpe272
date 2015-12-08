@@ -219,9 +219,16 @@ ul.alert-dropdown {
 }
 
 .margintop {
-	margin-top: 20px; 
+	margin-top: 20px;
 	text-align: right;
 }
-.margintop45{
+
+.margintop45 {
 	margin-top: 45px;
+}
+
+.table1 {
+	display: block;
+	overflow-y: auto;
+	height: 550px;
 }

@@ -1,9 +1,8 @@
 $(function() {
 	var $setlist = $('#list');
 	var $setstrategy = $('#select');
-	var $foodrow = $('#foodlist tr>td');
 	var $food = $('#foodlist');
-	$foodrow.remove();	
+
 	$('#submit').on('click', function() {
 		var senddata = {
 				days: $setlist.val(),
@@ -15,7 +14,8 @@ $(function() {
 			url : '/CMPE272/food/expired' + '/' + senddata.days + '/' + senddata.discount,
 			data : senddata,
 			success : function(){	
-
+				if ($('#foodlist').attr('name') == senddata.days){
+				$('#foodlist tr>td').remove();	
 				$.ajax({
 					type : 'GET',
 					url : '/CMPE272/food/expired' + '/' + senddata.days,
@@ -33,9 +33,9 @@ $(function() {
 						alert('error load data!');
 					}
 				});
-			},
+			}},
 			error : function(){
-				alert('error');
+				alert('error load data');
 			}
 		})
 	})

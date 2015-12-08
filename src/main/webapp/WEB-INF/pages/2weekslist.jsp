@@ -52,8 +52,10 @@
 <script type="text/javascript" src="resources/angular-route.js"></script>
 <script type="text/javascript" src="resources/userApp.js"></script>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script type="text/javascript" src="resources/getDate.js"></script>
+<script type="text/javascript" src="resources/postData.js"></script>
 </head>
 
 <body>
@@ -174,12 +176,13 @@
 						data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Food
 							Query <i class="fa fa-fw fa-caret-down"></i></a>
 						<ul id="demo" class="collapse in">
-							<li><a href="user/foodList.html" class = "disinline">Food List</a></li>
+							<li><a href="user/foodList.html" class="disinline">Food
+									List</a></li>
 							<li><a href="user/3weekslist.html">3 weeks left food</a></li>
 							<li><a href="user/2weekslist.html">2 weeks left food</a></li>
 							<li><a href="user/1weeklist.html">1 week left food</a></li>
 						</ul></li>
-					<li><a href="charts.html"><i
+					<!-- <li><a href="charts.html"><i
 							class="fa fa-fw fa-bar-chart-o"></i> Charts</a></li>
 					<li><a href="tables.html"><i class="fa fa-fw fa-table"></i>
 							Tables</a></li>
@@ -193,7 +196,7 @@
 					<li><a href="blank-page.html"><i class="fa fa-fw fa-file"></i>
 							Blank Page</a></li>
 					<li><a href="index-rtl.html"><i
-							class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a></li>
+							class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a></li> -->
 				</ul>
 			</div>
 			<!-- /.navbar-collapse -->
@@ -220,7 +223,7 @@
 					<div class="col-lg-6">
 						<h2>2 weeks left food</h2>
 						<div class="table-responsive">
-							<table id="foodlist" class="table table-bordered table-hover">
+							<table id="foodlist" class="table table1 table-bordered table-hover" name="14">
 								<thead>
 									<tr>
 										<th>Food Name</th>
@@ -238,30 +241,30 @@
 					<div class="col-lg-6">
 						<div class="form-group margintop45">
 							<label>Please select the food list you want to discount</label> <select
-								class="form-control">
+								class="form-control" id="list">
 								<option>food list</option>
-								<option>3 weeks left food</option>
-								<option>2 weeks left food</option>
-								<option>1 week left food</option>
+								<option value="21">3 weeks left food</option>
+								<option value="14">2 weeks left food</option>
+								<option value="7">1 week left food</option>
 							</select>
 						</div>
-					</div>
-					<div class="col-lg-6">
-						<div class="form-group">
+
+						<div class="form-group ">
 							<label>Please select the strategy</label> <select
-								class="form-control">
-								<option>10% discount</option>
-								<option>20% discount</option>
-								<option>30% discount</option>
-								<option>donate</option>
+								class="form-control" id="select">
+								<option value="1">10% discount</option>
+								<option value="5">50% discount</option>
+								<!--<option>30% discount</option>  -->
+								<option value="-1">donate</option>
 							</select>
-							<div class = "margintop">
-							<button type="submit" class="btn btn-default">Submit</button></div>
+							<div class="margintop">
+								<button id="submit" type="submit" class="btn btn-default">Submit</button>
+							</div>
 						</div>
-						
+
 					</div>
 				</div>
-				
+
 				<!-- /.row -->
 
 			</div>

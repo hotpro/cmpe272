@@ -249,7 +249,10 @@ th {
     border: 1px solid #000;
   }
   .table {
+  	display: block;
     border-collapse: collapse !important;
+    overflow-y: auto;
+    height: 550px;
   }
   .table td,
   .table th {

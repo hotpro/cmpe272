@@ -1,6 +1,6 @@
 package com.cmpe272.dao;
 
-import com.cmpe272.domain.DiscountStat;
+import com.cmpe272.domain.DiscountNum;
 import com.cmpe272.domain.Food;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -121,20 +121,20 @@ public class FoodDAO {
         return mongoCollection.count(basicDBObject);
     }
 
-    public List<DiscountStat> getTop5Discount() {
+    public List<DiscountNum> getTop5Discount() {
         AggregateIterable<Document> iterable = mongoCollection.aggregate(Arrays.asList(
                 new Document("$group", new Document("_id", "$Discount").append("count", new Document("$sum", 1)))
                 ,
                 new Document("$sort", new Document("count", -1)),
                 new Document("$limit", 5)
                 ));
-        List<DiscountStat> list = new ArrayList<>();
+        List<DiscountNum> list = new ArrayList<>();
         for (Document document : iterable) {
             System.out.println(document);
-            DiscountStat discountStat = new DiscountStat();
-            discountStat.disCountMsg = getDiscountMsg(getDiscount(document, "_id"));
-            discountStat.count = document.getInteger("count");
-            list.add(discountStat);
+            DiscountNum discountNum = new DiscountNum();
+            discountNum.disCountMsg = getDiscountMsg(getDiscount(document, "_id"));
+            discountNum.count = document.getInteger("count");
+            list.add(discountNum);
         }
         return list;
     }

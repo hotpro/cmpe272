@@ -5,5 +5,5 @@ package com.cmpe272.domain;
  */
 public class DonationHistory {
     public String[] years;
-    public int[] numbers;
+    public long[] numbers;
 }

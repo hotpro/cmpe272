@@ -1,6 +1,7 @@
 package com.cmpe272.controller;
 
 import com.cmpe272.dao.FoodDAO;
+import com.cmpe272.domain.DiscountStat;
 import com.cmpe272.domain.DonationHistory;
 import com.cmpe272.domain.Food;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -79,8 +80,38 @@ public class FoodController {
     public DonationHistory getDonationHistory() {
         DonationHistory donationHistory = new DonationHistory();
         donationHistory.years = new String[]{"2015", "2016", "2017", "2018", "2019"};
-        donationHistory.numbers = new int[] {1000, 800, 900, 700, 50};
+        donationHistory.numbers = new long[] {1000, 800, 900, 700, 50};
+        int[] nums = {2015, 2016, 2017, 2018, 2019};
+        donationHistory.years = new String[nums.length];
+        donationHistory.numbers = new long[nums.length];
+        for (int i = 0; i < nums.length; i++) {
+            donationHistory.years[i] = String.valueOf(nums[i]);
+            donationHistory.numbers[i] = getDonationCount(nums[i]);
+        }
+
         return donationHistory;
+    }
+
+    @RequestMapping(value = "/analysis/discount/top", method = RequestMethod.GET)
+    @ResponseBody
+    public List<DiscountStat> getTopDiscount() {
+        return foodDAO.getTop5Discount();
+    }
+
+
+    private long getDonationCount(int year) {
+        Calendar cal = Calendar.getInstance();
+        cal.set(Calendar.YEAR, year);
+        cal.set(Calendar.MONTH, Calendar.JANUARY);
+        cal.set(Calendar.DAY_OF_MONTH, 1);
+        cal.set(Calendar.HOUR_OF_DAY, 0);
+        cal.set(Calendar.MINUTE, 0);
+        cal.set(Calendar.SECOND, 0);
+        cal.set(Calendar.MILLISECOND, 0);
+        Date start = cal.getTime();
+        cal.add(Calendar.YEAR, 1);
+        Date end = cal.getTime();
+        return foodDAO.getDonationCount(start, end);
     }
 
 //    @RequestMapping(value = "/analysis/donation", method = RequestMethod.GET)

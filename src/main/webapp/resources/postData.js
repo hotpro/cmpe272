@@ -1,3 +1,4 @@
+//<!--wj create 12/08/2015  -->
 $(function() {
 	var $setlist = $('#list');
 	var $setstrategy = $('#select');

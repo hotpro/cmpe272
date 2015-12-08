@@ -1,6 +1,7 @@
 package com.cmpe272.dao;
 
 import com.cmpe272.domain.DiscountNum;
+import com.cmpe272.domain.DiscountStat;
 import com.cmpe272.domain.Food;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -18,10 +19,7 @@ import org.springframework.stereotype.Component;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by yutao on 12/3/15.
@@ -158,6 +156,44 @@ public class FoodDAO {
             discountMsg = "Donated";
         }
         return discountMsg;
+    }
+
+    public List<DiscountStat> getDiscountStat() {
+        int[] nums = {2015, 2016, 2017, 2018, 2019};
+        double[] discounts = {0.1, 0.5, -1};
+        List<DiscountStat> list = new ArrayList<>();
+
+        for (int i = 0; i < nums.length; i++) {
+            DiscountStat discountStat = new DiscountStat();
+            discountStat.year = String.valueOf(nums[i]);
+            discountStat.off10 = getDiscountByYear(nums[i], 0.1);
+            discountStat.off50 = getDiscountByYear(nums[i], 0.5);
+            discountStat.donation = getDiscountByYear(nums[i], -1);
+            list.add(discountStat);
+        }
+        return list;
+    }
+
+    private long getDiscountByYear(int year, double discount) {
+        Calendar cal = Calendar.getInstance();
+        cal.set(Calendar.YEAR, year);
+        cal.set(Calendar.MONTH, Calendar.JANUARY);
+        cal.set(Calendar.DAY_OF_MONTH, 1);
+        cal.set(Calendar.HOUR_OF_DAY, 0);
+        cal.set(Calendar.MINUTE, 0);
+        cal.set(Calendar.SECOND, 0);
+        cal.set(Calendar.MILLISECOND, 0);
+        Date start = cal.getTime();
+        cal.add(Calendar.YEAR, 1);
+        Date end = cal.getTime();
+        BasicDBObject basicDBObject = new BasicDBObject();
+        basicDBObject.put("Date", BasicDBObjectBuilder.start("$gte", start).add("$lte", end).get());
+        if (discount > 0) {
+            basicDBObject.put("Discount", discount);
+        } else {
+            basicDBObject.put("Discount", new Document("$lt", 0));
+        }
+        return mongoCollection.count(basicDBObject);
     }
 
 }

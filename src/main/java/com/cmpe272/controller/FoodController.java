@@ -2,6 +2,7 @@ package com.cmpe272.controller;
 
 import com.cmpe272.dao.FoodDAO;
 import com.cmpe272.domain.DiscountNum;
+import com.cmpe272.domain.DiscountStat;
 import com.cmpe272.domain.DonationHistory;
 import com.cmpe272.domain.Food;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -115,6 +116,11 @@ public class FoodController {
     }
 
 
+    @RequestMapping(value = "/analysis/discountstat", method = RequestMethod.GET)
+    @ResponseBody
+    public List<DiscountStat> getDiscountStat() {
+        return foodDAO.getDiscountStat();
+    }
 
 //    @RequestMapping(value = "/analysis/donation", method = RequestMethod.GET)
 //    @ResponseBody

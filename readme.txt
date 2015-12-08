@@ -62,69 +62,76 @@ return "SUCCESS", "FAIL"
 
 "/food/analysis/donation"
 {
-    years:["2015", "2016", "2017", "2018", "2019"],
-    numbers:[1000, 800, 900, 700, 500]
+  "years": [
+    "2015",
+    "2016",
+    "2017",
+    "2018",
+    "2019"
+  ],
+  "numbers": [
+    1838,
+    1749,
+    1846,
+    0,
+    0
+  ]
 }
 
 "/food/analysis/discount/top"
-{
-    top5discount:["90 % OFF", "20 % OFF", "70 % OFF", "40 % OFF", "50 % OFF", ],
-    numbers:[1000, 900, 800, 700, 500]
-}
+[
+  {
+    "disCountMsg": "1 % OFF",
+    "count": 800
+  },
+  {
+    "disCountMsg": "5 % OFF",
+    "count": 782
+  },
+  {
+    "disCountMsg": "3 % OFF",
+    "count": 774
+  },
+  {
+    "disCountMsg": "9 % OFF",
+    "count": 774
+  },
+  {
+    "disCountMsg": "4 % OFF",
+    "count": 766
+  }
+]
 
-"/food/analysis/discount/history"
-// Area Chart
-    Morris.Area({
-        element: 'morris-area-chart',
-        data: [{
-            period: '2015',
-            iphone: 2666,
-            ipad: null,
-            itouch: 2647
-        }, {
-            period: '2010 Q2',
-            iphone: 2778,
-            ipad: 2294,
-            itouch: 2441
-        }, {
-            period: '2010 Q3',
-            iphone: 4912,
-            ipad: 1969,
-            itouch: 2501
-        }, {
-            period: '2010 Q4',
-            iphone: 3767,
-            ipad: 3597,
-            itouch: 5689
-        }, {
-            period: '2011 Q1',
-            iphone: 6810,
-            ipad: 1914,
-            itouch: 2293
-        }, {
-            period: '2011 Q2',
-            iphone: 5670,
-            ipad: 4293,
-            itouch: 1881
-        }, {
-            period: '2011 Q3',
-            iphone: 4820,
-            ipad: 3795,
-            itouch: 1588
-        }, {
-            period: '2011 Q4',
-            iphone: 15073,
-            ipad: 5967,
-            itouch: 5175
-        }, {
-            period: '2012 Q1',
-            iphone: 10687,
-            ipad: 4460,
-            itouch: 2028
-        }, {
-            period: '2012 Q2',
-            iphone: 8432,
-            ipad: 5713,
-            itouch: 1791
-        }],
-
+"/food/analysis/discountstat"
+[
+  {
+    "year": "2015",
+    "off10": 155,
+    "off50": 0,
+    "donation": 0
+  },
+  {
+    "year": "2016",
+    "off10": 166,
+    "off50": 0,
+    "donation": 0
+  },
+  {
+    "year": "2017",
+    "off10": 172,
+    "off50": 0,
+    "donation": 0
+  },
+  {
+    "year": "2018",
+    "off10": 0,
+    "off50": 0,
+    "donation": 0
+  },
+  {
+    "year": "2019",
+    "off10": 0,
+    "off50": 0,
+    "donation": 0
+  }
+]

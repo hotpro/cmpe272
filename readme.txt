@@ -60,7 +60,7 @@ discount: 9: 90 % OFF,  1: 10 % OFF, -1: Donated
 
 return "SUCCESS", "FAIL"
 
-"/food/analysis/donation"
+"/food/analysis/donation", method = RequestMethod.GET
 {
   "years": [
     "2015",
@@ -78,7 +78,7 @@ return "SUCCESS", "FAIL"
   ]
 }
 
-"/food/analysis/discount/top"
+"/food/analysis/discount/top", method = RequestMethod.GET
 [
   {
     "disCountMsg": "1 % OFF",
@@ -102,7 +102,7 @@ return "SUCCESS", "FAIL"
   }
 ]
 
-"/food/analysis/discountstat"
+"/food/analysis/discountstat", method = RequestMethod.GET
 [
   {
     "year": "2015",

@@ -17,6 +17,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="author" content="">
+	<meta name="_csrf" content="${_csrf.token}"/>
+	<!-- default header name is X-CSRF-TOKEN -->
+	<meta name="_csrf_header" content="${_csrf.headerName}"/>
 
 <title>Food Management</title>
 
@@ -45,6 +48,19 @@
 
 	<!--jquery-->
 	<script src="resources/js/jquery.js"></script>
+
+	<script>
+//		$.ajaxSetup({
+//			data: {csrfmiddlewaretoken: '{{ csrf_token }}' },
+//		});
+		$.ajaxSetup( {
+			beforeSend: function ( xhr ) {
+				var token = $("meta[name='_csrf']").attr("content");
+				var header = $("meta[name='_csrf_header']").attr("content");
+				xhr.setRequestHeader(header, token );
+			}
+		});
+	</script>
 
 	<!-- highchart -->
 	<script src="resources/js/plugins/highcharts/highcharts.js"></script>

@@ -39,25 +39,19 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
-<!-- <script type="text/javascript">
-	var DOCUMENTATION_OPTIONS = {
-		URL_ROOT : '#',
-		VERSION : '3.0',
-		COLLAPSE_INDEX : false,
-		FILE_SUFFIX : '',
-		HAS_SOURCE : false,
-	}; -->
-</script>
 <script type="text/javascript" src="resources/angular.js"></script>
 <script type="text/javascript" src="resources/angular-route.js"></script>
 <script type="text/javascript" src="resources/userApp.js"></script>
+
+	<!--jquery-->
+	<script src="resources/js/jquery.js"></script>
+
+	<!-- highchart -->
+	<script src="resources/js/plugins/highcharts/highcharts.js"></script>
 </head>
 
 <body>
-
 	<div id="wrapper">
-
 		<!-- Navigation -->
 		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 			<!-- Brand and toggle get grouped for better mobile display -->
@@ -177,21 +171,6 @@
 							<li><a href="user/2weekslist.html">2 weeks left food</a></li>
 							<li><a href="user/1weeklist.html">1 week left food</a></li>
 						</ul></li>
-					<!-- <li><a href="charts.html"><i
-							class="fa fa-fw fa-bar-chart-o"></i> Charts</a></li>
-					<li><a href="tables.html"><i class="fa fa-fw fa-table"></i>
-							Tables</a></li>
-					<li><a href="forms.html"><i class="fa fa-fw fa-edit"></i>
-							Forms</a></li>
-					<li><a href="bootstrap-elements.html"><i
-							class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a></li>
-					<li><a href="bootstrap-grid.html"><i
-							class="fa fa-fw fa-wrench"></i> Bootstrap Grid</a></li>
-
-					<li><a href="blank-page.html"><i class="fa fa-fw fa-file"></i>
-							Blank Page</a></li>
-					<li><a href="index-rtl.html"><i
-							class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a></li> -->
 				</ul>
 			</div>
 			<!-- /.navbar-collapse -->
@@ -205,291 +184,66 @@
 				<div class="row">
 					<div class="col-lg-12">
 						<h1 class="page-header">
-							Dashboard <small>Statistics Overview</small>
+							Dashboard
 						</h1>
 						<ol class="breadcrumb">
-							<li class="active"><i class="fa fa-dashboard"></i> Dashboard
+							<li class="active"><i class="fa fa-dashboard"></i> Statistics Overview
 							</li>
 						</ol>
 					</div>
 				</div>
-				<!-- /.row 
 
-				<div class="row">
-					<div class="col-lg-12">
-						<div class="alert alert-info alert-dismissable">
-							<button type="button" class="close" data-dismiss="alert"
-								aria-hidden="true">&times;</button>
-							<i class="fa fa-info-circle"></i> <strong>The top 10
-								likely to expire food!</strong>
-						</div>
-					</div>
-				</div>
-				<!-- /.row 
-
-				<div class="row">
-					<div class="col-lg-3 col-md-6">
-						<div class="panel panel-primary">
-							<div class="panel-heading">
-								<div class="row">
-									<div class="col-xs-3">
-										<i class="fa fa-comments fa-5x"></i>
-									</div>
-									<div class="col-xs-9 text-right">
-										<div class="huge">26</div>
-										<div>New Comments!</div>
-									</div>
-								</div>
-							</div>
-							<a href="#">
-								<div class="panel-footer">
-									<span class="pull-left">View Details</span> <span
-										class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-									<div class="clearfix"></div>
-								</div>
-							</a>
-						</div>
-					</div>
-					<div class="col-lg-3 col-md-6">
-						<div class="panel panel-green">
-							<div class="panel-heading">
-								<div class="row">
-									<div class="col-xs-3">
-										<i class="fa fa-tasks fa-5x"></i>
-									</div>
-									<div class="col-xs-9 text-right">
-										<div class="huge">12</div>
-										<div>New Tasks!</div>
-									</div>
-								</div>
-							</div>
-							<a href="#">
-								<div class="panel-footer">
-									<span class="pull-left">View Details</span> <span
-										class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-									<div class="clearfix"></div>
-								</div>
-							</a>
-						</div>
-					</div>
-					<div class="col-lg-3 col-md-6">
-						<div class="panel panel-yellow">
-							<div class="panel-heading">
-								<div class="row">
-									<div class="col-xs-3">
-										<i class="fa fa-shopping-cart fa-5x"></i>
-									</div>
-									<div class="col-xs-9 text-right">
-										<div class="huge">124</div>
-										<div>New Orders!</div>
-									</div>
-								</div>
-							</div>
-							<a href="#">
-								<div class="panel-footer">
-									<span class="pull-left">View Details</span> <span
-										class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-									<div class="clearfix"></div>
-								</div>
-							</a>
-						</div>
-					</div>
-					<div class="col-lg-3 col-md-6">
-						<div class="panel panel-red">
-							<div class="panel-heading">
-								<div class="row">
-									<div class="col-xs-3">
-										<i class="fa fa-support fa-5x"></i>
-									</div>
-									<div class="col-xs-9 text-right">
-										<div class="huge">13</div>
-										<div>Support Tickets!</div>
-									</div>
-								</div>
-							</div>
-							<a href="#">
-								<div class="panel-footer">
-									<span class="pull-left">View Details</span> <span
-										class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-									<div class="clearfix"></div>
-								</div>
-							</a>
-						</div>
-					</div>
-				</div>
-				 /.row -->
 
 				<div class="row">
 					<div class="col-lg-12">
 						<div class="panel panel-default">
 							<div class="panel-heading">
 								<h3 class="panel-title">
-									<i class="fa fa-bar-chart-o fa-fw"></i> Food Analysis
+									<i class="fa fa-bar-chart-o fa-fw"></i> Chart1
 								</h3>
 							</div>
-							<div class="panel-body">
-								<div id="morris-area-chart"></div>
-							</div>
+							<div id="container-hc1" style="width: 750px; height: 400px; margin: 0 auto"></div>
 						</div>
 					</div>
 				</div>
 				<!-- /.row -->
-
 				<div class="row">
-					<div class="col-lg-6">
-						<div class="panel panel-primary">
-							<div class="panel-heading">
-								<h3 class="panel-title">
-									<i class="fa fa-long-arrow-right fa-fw"></i> Donut Chart
-								</h3>
-							</div>
-							<div class="panel-body">
-								<div id="morris-donut-chart"></div>
-								<div class="text-right">
-									<a href="#">View Details <i
-										class="fa fa-arrow-circle-right"></i></a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-lg-6">
-							<div class="panel panel-primary">
-								<div class="panel-heading">
-									<h3 class="panel-title">
-										<i class="fa fa-long-arrow-right"></i> Bar Graph Example
-									</h3>
-								</div>
-								<div class="panel-body">
-									<div id="morris-bar-chart"></div>
-									<div class="text-right">
-										<a href="#">View Details <i
-											class="fa fa-arrow-circle-right"></i></a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- <div class="col-lg-4">
+					<div class="col-lg-12">
 						<div class="panel panel-default">
 							<div class="panel-heading">
 								<h3 class="panel-title">
-									<i class="fa fa-clock-o fa-fw"></i> Tasks Panel
+									<i class="fa fa-bar-chart-o fa-fw"></i> Chart2
 								</h3>
 							</div>
-							<div class="panel-body">
-								<div class="list-group">
-									<a href="#" class="list-group-item"> <span class="badge">just
-											now</span> <i class="fa fa-fw fa-calendar"></i> Calendar updated
-									</a> <a href="#" class="list-group-item"> <span class="badge">4
-											minutes ago</span> <i class="fa fa-fw fa-comment"></i> Commented on
-										a post
-									</a> <a href="#" class="list-group-item"> <span class="badge">23
-											minutes ago</span> <i class="fa fa-fw fa-truck"></i> Order 392
-										shipped
-									</a> <a href="#" class="list-group-item"> <span class="badge">46
-											minutes ago</span> <i class="fa fa-fw fa-money"></i> Invoice 653 has
-										been paid
-									</a> <a href="#" class="list-group-item"> <span class="badge">1
-											hour ago</span> <i class="fa fa-fw fa-user"></i> A new user has been
-										added
-									</a> <a href="#" class="list-group-item"> <span class="badge">2
-											hours ago</span> <i class="fa fa-fw fa-check"></i> Completed task:
-										"pick up dry cleaning"
-									</a> <a href="#" class="list-group-item"> <span class="badge">yesterday</span>
-										<i class="fa fa-fw fa-globe"></i> Saved the world
-									</a> <a href="#" class="list-group-item"> <span class="badge">two
-											days ago</span> <i class="fa fa-fw fa-check"></i> Completed task:
-										"fix error on sales page"
-									</a>
-								</div>
-								<div class="text-right">
-									<a href="#">View All Activity <i
-										class="fa fa-arrow-circle-right"></i></a>
-								</div>
-							</div>
+							<div id="container-hc2" style="width: 750px; height: 400px; margin: 0 auto"></div>
 						</div>
 					</div>
-					<div class="col-lg-4">
+				</div>
+				<!-- /.row -->
+				<div class="row">
+					<div class="col-lg-12">
 						<div class="panel panel-default">
 							<div class="panel-heading">
 								<h3 class="panel-title">
-									<i class="fa fa-money fa-fw"></i> Transactions Panel
+									<i class="fa fa-bar-chart-o fa-fw"></i> Chart3
 								</h3>
 							</div>
-							<div class="panel-body">
-								<div class="table-responsive">
-									<table class="table table-bordered table-hover table-striped">
-										<thead>
-											<tr>
-												<th>Order #</th>
-												<th>Order Date</th>
-												<th>Order Time</th>
-												<th>Amount (USD)</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td>3326</td>
-												<td>10/21/2013</td>
-												<td>3:29 PM</td>
-												<td>$321.33</td>
-											</tr>
-											<tr>
-												<td>3325</td>
-												<td>10/21/2013</td>
-												<td>3:20 PM</td>
-												<td>$234.34</td>
-											</tr>
-											<tr>
-												<td>3324</td>
-												<td>10/21/2013</td>
-												<td>3:03 PM</td>
-												<td>$724.17</td>
-											</tr>
-											<tr>
-												<td>3323</td>
-												<td>10/21/2013</td>
-												<td>3:00 PM</td>
-												<td>$23.71</td>
-											</tr>
-											<tr>
-												<td>3322</td>
-												<td>10/21/2013</td>
-												<td>2:49 PM</td>
-												<td>$8345.23</td>
-											</tr>
-											<tr>
-												<td>3321</td>
-												<td>10/21/2013</td>
-												<td>2:23 PM</td>
-												<td>$245.12</td>
-											</tr>
-											<tr>
-												<td>3320</td>
-												<td>10/21/2013</td>
-												<td>2:15 PM</td>
-												<td>$5663.54</td>
-											</tr>
-											<tr>
-												<td>3319</td>
-												<td>10/21/2013</td>
-												<td>2:13 PM</td>
-												<td>$943.45</td>
-											</tr>
-										</tbody>
-									</table>
-								</div>
-								<div class="text-right">
-									<a href="#">View All Transactions <i
-										class="fa fa-arrow-circle-right"></i></a>
-								</div>
-							</div>
+							<div id="container-hc3" style="width: 750px; height: 400px; margin: 0 auto"></div>
 						</div>
 					</div>
-				</div> -->
-					<!-- /.row -->
-
+				</div>
+				<!-- /.row -->
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h3 class="panel-title">
+									<i class="fa fa-bar-chart-o fa-fw"></i> Chart4
+								</h3>
+							</div>
+							<div id="container-hc4" style="width: 750px; height: 400px; margin: 0 auto"></div>
+						</div>
+					</div>
 				</div>
 				<!-- /.container-fluid -->
 
@@ -498,25 +252,339 @@
 
 		</div>
 		<!-- /#wrapper -->
-
-		<!-- jQuery -->
-		<script src="resources/js/jquery.js"></script>
-
+	</div>
+	<!-- /#wrapper -->
 		<!-- Bootstrap Core JavaScript -->
 		<script src="resources/js/bootstrap.min.js"></script>
 
-		<!-- Morris Charts JavaScript -->
-		<script src="resources/js/plugins/morris/raphael.min.js"></script>
-		<script src="resources/js/plugins/morris/morris.min.js"></script>
-		<script src="resources/js/plugins/morris/morris-data.js"></script>
+		<!--highchart1 -->
+		<script language="JavaScript">
+			$(document).ready(function() {
+				var title = {
+					text: 'Monthly Donated Food Value (Year 2010 to Year 2015)'
+				};
+				var xAxis = {
+					categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+						'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+				};
+				var yAxis = {
+					title: {
+						text: ' Value = UintPrice * Sales ($) '
+					},
+					plotLines: [{
+						value: 0,
+						width: 1,
+						color: '#808080'
+					}]
+				};
 
-		<!-- Flot Charts JavaScript -->
-		<!--[if lte IE 8]><script src="js/excanvas.min.js"></script><![endif]-->
-		<script src="resources/js/plugins/flot/jquery.flot.js"></script>
-		<script src="resources/js/plugins/flot/jquery.flot.tooltip.min.js"></script>
-		<script src="resources/js/plugins/flot/jquery.flot.resize.js"></script>
-		<script src="resources/js/plugins/flot/jquery.flot.pie.js"></script>
-		<script src="resources/js/plugins/flot/flot-data.js"></script>
+				var tooltip = {
+					valueSuffix: '$'
+				}
+
+				var legend = {
+					layout: 'vertical',
+					align: 'right',
+					verticalAlign: 'middle',
+					borderWidth: 0
+				};
+
+				var series =  [
+					{
+						name: '2010',
+						data: [700, 690, 950, 1450, 1820, 2150, 2520,
+							2650, 2330, 1830, 1390, 960]
+					},
+					{
+						name: '2012',
+						data: [90, 60, 350, 840, 1350, 1700, 1860,
+							1790, 1430, 900, 390, 100]
+					},
+					{
+						name: '2013',
+						data: [190, 320, 470, 850, 1190, 1520, 1400,
+							1660, 1020, 630, 160, 180]
+					},
+					{
+						name: '2014',
+						data: [210, 420, 570, 850, 1190, 1520, 1500,
+							1060, 1220, 830, 260, 280]
+					},
+					{
+						name: '2015',
+						data: [290, 220, 270, 850, 1190, 1520, 1700,
+							1660, 1420, 1030, 660, 0]
+					}
+				];
+
+				var json = {};
+
+				json.title = title;
+				json.xAxis = xAxis;
+				json.yAxis = yAxis;
+				json.tooltip = tooltip;
+				json.legend = legend;
+				json.series = series;
+
+				$('#container-hc1').highcharts(json);
+			});
+		</script>
+		<!--highchart2 -->
+		<script language="JavaScript">
+			$(document).ready(function() {
+				var chart = {
+					type: 'bar'
+				};
+				var title = {
+					text: 'Top 5 Discount Strategy (Year 2013 to Year 2015)'
+				};
+				var xAxis = {
+					categories: ['1 % OFF', '5 % OFF', '3 % OFF', '9 % OFF', '4 % OFF'],
+					title: {
+						text: null
+					}
+				};
+				var yAxis = {
+					min: 0,
+					title: {
+						text: ' Value = UintPrice * Sales ($) ',
+						align: 'high'
+					},
+					labels: {
+						overflow: 'justify'
+					}
+				};
+				var tooltip = {
+					valueSuffix: '$'
+				};
+				var plotOptions = {
+					bar: {
+						dataLabels: {
+							enabled: true
+						}
+					}
+				};
+				var legend = {
+					layout: 'vertical',
+					align: 'right',
+					verticalAlign: 'top',
+					x: -40,
+					y: 100,
+					floating: true,
+					borderWidth: 1,
+					backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
+					shadow: true
+				};
+				var credits = {
+					enabled: false
+				};
+
+				var series= [{
+					name: 'Year 2013',
+					data: [15500, 28100, 23500, 20300, 20000]
+				}, {
+					name: 'Year 2014',
+					data: [16600, 15600, 24700, 10800, 36000]
+				}, {
+					name: 'Year 2015',
+					data: [17200, 21400, 30500, 13200, 34000]
+				}
+				];
+
+				var json = {};
+				json.chart = chart;
+				json.title = title;
+				json.tooltip = tooltip;
+				json.xAxis = xAxis;
+				json.yAxis = yAxis;
+				json.series = series;
+				json.plotOptions = plotOptions;
+				json.legend = legend;
+				json.credits = credits;
+				$('#container-hc2').highcharts(json);
+
+			});
+		</script>
+		<!--highchart3 -->
+		<script language="JavaScript">
+			$(document).ready(function() {
+
+				var title = {
+					text: 'Average Value of Donated Food (Year 2015)'
+				};
+				var xAxis = {
+					categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+						'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+				};
+				var labels = {
+					items: [{
+						html: 'Donated Food Value',
+						style: {
+							left: '10px',
+							top: '0px',
+							color: (Highcharts.theme && Highcharts.theme.textColor) || 'black'
+						}
+					}]
+				};
+
+				var series= [{
+					type: 'column',
+					name: 'grocery store1',
+					data: [290, 220, 270, 850, 1190, 1520, 1700,
+						1660, 1420, 1030, 660, 100]
+				}, {
+					type: 'column',
+					name: 'grocery store2',
+					data: [90, 320, 470, 650, 1090, 1320, 1400,
+						1000, 1220, 930, 460, 80]
+				}, {
+					type: 'column',
+					name: 'grocery store3',
+					data: [190, 120, 370, 650, 890, 1420, 1200,
+						1560, 1720, 630, 660, 120]
+				}, {
+					type: 'spline',
+					name: 'Average',
+					data: [190, 220, 360, 710, 1050, 1420, 1430, 1460, 1450, 860, 590, 100],
+					marker: {
+						lineWidth: 2,
+						lineColor: Highcharts.getOptions().colors[3],
+						fillColor: 'white'
+					}
+				}, {
+					type: 'pie',
+					name: 'Donated Food Value (Year 2015)',
+					data: [{
+						name: 'grocery store1',
+						y: 10910,
+						color: Highcharts.getOptions().colors[0]
+					}, {
+						name: 'grocery store2',
+						y: 9030,
+						color: Highcharts.getOptions().colors[1]
+					}, {
+						name: 'grocery store3',
+						y: 9530,
+						color: Highcharts.getOptions().colors[2]
+					}],
+					center: [60, 50],
+					size: 100,
+					showInLegend: false,
+					dataLabels: {
+						enabled: false
+					}
+				}
+				];
+
+
+				var json = {};
+				json.title = title;
+				json.xAxis = xAxis;
+				json.labels = labels;
+				json.series = series;
+				$('#container-hc3').highcharts(json);
+			});
+		</script>
+		<!--highchart4 -->
+		<script language="JavaScript">
+			$(document).ready(function() {
+				var chart = {
+					type: 'spline',
+					animation: Highcharts.svg,
+					marginRight: 10,
+					events: {
+						load: function () {
+							// set up the updating of the chart each second
+							var series = this.series[0];
+							setInterval(function () {
+								var x = (new Date()).getTime(), // current time
+										y = Math.random();
+								series.addPoint([x, y], true, true);
+							}, 5000);
+						}
+					}
+				};
+				var title = {
+					text: 'Real-time Sales Data Under Current Strategy (Year 2015)'
+				};
+				var xAxis = {
+					type: 'datetime',
+					tickPixelInterval: 150
+				};
+				var yAxis = {
+					title: {
+						text: 'Sales Simulated Data (%)'
+					},
+					plotLines: [{
+						value: 0,
+						width: 1,
+						color: '#808080'
+					}]
+				};
+				var tooltip = {
+					formatter: function () {
+						return '<b>' + this.series.name + '</b><br/>' +
+								Highcharts.dateFormat('%Y-%m-%d %H:%M:%S', this.x) + '<br/>' +
+								Highcharts.numberFormat(this.y, 2);
+					}
+				};
+				var plotOptions = {
+					area: {
+						pointStart: 1940,
+						marker: {
+							enabled: false,
+							symbol: 'circle',
+							radius: 2,
+							states: {
+								hover: {
+									enabled: true
+								}
+							}
+						}
+					}
+				};
+				var legend = {
+					enabled: false
+				};
+				var exporting = {
+					enabled: false
+				};
+				var series= [{
+					name: 'Random data',
+					data: (function () {
+						// generate an array of random data
+						var data = [],time = (new Date()).getTime(),i;
+						for (i = -19; i <= 0; i += 1) {
+							data.push({
+								x: time + i * 1000,
+								y: Math.random()
+							});
+						}
+						return data;
+					}())
+				}];
+
+				var json = {};
+				json.chart = chart;
+				json.title = title;
+				json.tooltip = tooltip;
+				json.xAxis = xAxis;
+				json.yAxis = yAxis;
+				json.legend = legend;
+				json.exporting = exporting;
+				json.series = series;
+				json.plotOptions = plotOptions;
+
+
+				Highcharts.setOptions({
+					global: {
+						useUTC: false
+					}
+				});
+				$('#container-hc4').highcharts(json);
+
+			});
+		</script>
 </body>
 
 </html>

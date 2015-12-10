@@ -48,5 +48,6 @@
             org.springframework.web.context.ContextLoaderListener
         </listener-class>
     </listener>
+    <distributable />
 
 </web-app>

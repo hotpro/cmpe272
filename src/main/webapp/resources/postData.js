@@ -9,9 +9,15 @@ $(function() {
 				days: $setlist.val(),
 				discount: $setstrategy.val(),
 		}
+		var token = $("meta[name='_csrf']").attr("content");
+		var header = $("meta[name='_csrf_header']").attr("content");
 	
 		$.ajax({
 			type : 'POST',
+			beforeSend: function (request)
+			{
+				request.setRequestHeader(header, token);
+			},
 			url : '/CMPE272/food/expired' + '/' + senddata.days + '/' + senddata.discount,
 			data : senddata,
 			success : function(){	

@@ -9,7 +9,7 @@ http://www.springframework.org/schema/security/spring-security.xsd">
 		<form-login
 			login-page="/login-1.html" 
 			default-target-url="/user/"
-			authentication-failure-url="/login.html?error" 
+			authentication-failure-url="/login-1.html?error"
 			username-parameter="username"
 			password-parameter="password" 
 			login-processing-url="/j_spring_security_check" 
@@ -31,7 +31,7 @@ http://www.springframework.org/schema/security/spring-security.xsd">
 		<session-management session-fixation-protection="newSession">
 			<concurrency-control max-sessions="1" />
 		</session-management>
-		<csrf disabled="true" />
+		<csrf />
 	</http>
 	
 	<authentication-manager>

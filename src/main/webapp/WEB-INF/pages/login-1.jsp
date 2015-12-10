@@ -63,8 +63,17 @@
 				<div class="form-group">
 					<div class="col-xs-12">
 						<div class="control-wrapper">
+							<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+							<%--<input type='hidden' name='csrfmiddlewaretoken' value='{% csrf_token %}' />--%>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-xs-12">
+						<div class="control-wrapper">
 							<label for="username" class="control-label fa-label"><i
 								class="fa fa-medium"></i></label> <input type="text"
+																		 name="username"
 								class="form-control" id="username" placeholder="Username">
 						</div>
 					</div>
@@ -74,6 +83,7 @@
 						<div class="control-wrapper">
 							<label for="password" class="control-label fa-label"><i
 								class="fa fa-medium"></i></label> <input type="password"
+																		 name="password"
 								class="form-control" id="password" placeholder="Password">
 						</div>
 					</div>

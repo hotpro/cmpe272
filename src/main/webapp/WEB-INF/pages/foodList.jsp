@@ -72,7 +72,7 @@
 						class="icon-bar"></span>
 				</button>
 				<a class="navbar-brand" href="user/#/index.html">Food Management
-					Platform</a>
+					and Strategy Platform</a>
 			</div>
 			<!-- Top Menu Items -->
 			<ul class="nav navbar-right top-nav">

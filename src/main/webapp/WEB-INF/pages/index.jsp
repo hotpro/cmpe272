@@ -63,7 +63,7 @@
 						class="icon-bar"></span>
 				</button>
 				<a class="navbar-brand" href="user/#/index.html">Food Management
-					Platform</a>
+					and Platform</a>
 			</div>
 			<!-- Top Menu Items -->
 			<ul class="nav navbar-right top-nav">
@@ -339,7 +339,7 @@
 					text: 'Top 5 Discount Strategy (Year 2013 to Year 2015)'
 				};
 				var xAxis = {
-					categories: ['1 % OFF', '5 % OFF', '3 % OFF', '9 % OFF', '4 % OFF'],
+					categories: ['10 % OFF', '50 % OFF', '30 % OFF', '90 % OFF', '40 % OFF'],
 					title: {
 						text: null
 					}

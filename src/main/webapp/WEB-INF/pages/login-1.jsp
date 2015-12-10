@@ -73,6 +73,7 @@
 						<div class="control-wrapper">
 							<label for="username" class="control-label fa-label"><i
 								class="fa fa-medium"></i></label> <input type="text"
+																		 name="username"
 								class="form-control" id="username" placeholder="Username">
 						</div>
 					</div>
@@ -82,6 +83,7 @@
 						<div class="control-wrapper">
 							<label for="password" class="control-label fa-label"><i
 								class="fa fa-medium"></i></label> <input type="password"
+																		 name="password"
 								class="form-control" id="password" placeholder="Password">
 						</div>
 					</div>

@@ -1,15 +1,14 @@
 package com.cmpe272.spring.authentication;
 
-import java.io.IOException;
-import java.util.Set;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.authority.AuthorityUtils;
+import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.authority.AuthorityUtils;
-import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
+import java.io.IOException;
+import java.util.Set;
 
 public class LoginSuccessHandler implements AuthenticationSuccessHandler {
 
@@ -21,7 +20,7 @@ public class LoginSuccessHandler implements AuthenticationSuccessHandler {
 		String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path
 				+ "/";
 		if (roles.contains("ROLE_ADMIN")) {
-			response.sendRedirect(basePath + "admin/");
+			response.sendRedirect(basePath + "user/");
 			return;
 		}
 		response.sendRedirect(basePath + "user/");

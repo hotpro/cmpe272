@@ -60,4 +60,78 @@ discount: 9: 90 % OFF,  1: 10 % OFF, -1: Donated
 
 return "SUCCESS", "FAIL"
 
+"/food/analysis/donation", method = RequestMethod.GET
+{
+  "years": [
+    "2015",
+    "2016",
+    "2017",
+    "2018",
+    "2019"
+  ],
+  "numbers": [
+    1838,
+    1749,
+    1846,
+    0,
+    0
+  ]
+}
 
+"/food/analysis/discount/top", method = RequestMethod.GET
+[
+  {
+    "disCountMsg": "1 % OFF",
+    "count": 800
+  },
+  {
+    "disCountMsg": "5 % OFF",
+    "count": 782
+  },
+  {
+    "disCountMsg": "3 % OFF",
+    "count": 774
+  },
+  {
+    "disCountMsg": "9 % OFF",
+    "count": 774
+  },
+  {
+    "disCountMsg": "4 % OFF",
+    "count": 766
+  }
+]
+
+"/food/analysis/discountstat", method = RequestMethod.GET
+[
+  {
+    "year": "2015",
+    "off10": 155,
+    "off50": 0,
+    "donation": 0
+  },
+  {
+    "year": "2016",
+    "off10": 166,
+    "off50": 0,
+    "donation": 0
+  },
+  {
+    "year": "2017",
+    "off10": 172,
+    "off50": 0,
+    "donation": 0
+  },
+  {
+    "year": "2018",
+    "off10": 0,
+    "off50": 0,
+    "donation": 0
+  },
+  {
+    "year": "2019",
+    "off10": 0,
+    "off50": 0,
+    "donation": 0
+  }
+]

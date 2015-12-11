@@ -5,12 +5,16 @@
 The food management and strategy platform is a business level platform. Shopping mall such as Safeway uses this platform to track products expiration date and query products at any time so they can make options to deal with these products. It's an efficient way to avoid food wasting at the same time helping shopping mall gain a good reputation.
 
 ##Project Environment##
+
 Bootstrap + jQuery + Ajax + Spring MVC + MongoDB
 
 Open:
 Open Intellij
 Import, select pom.xml
 Run it on tomcat
+
+
+##Database Design##
 
 AccountInfo {
     String id

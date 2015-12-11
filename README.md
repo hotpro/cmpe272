@@ -16,6 +16,9 @@ Import, select pom.xml
 
 Run it on tomcat
 
+##Query##
+
+*Food List:* user can see all food products here.
 
 ##Database Design##
 

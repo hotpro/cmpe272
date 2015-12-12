@@ -16,23 +16,52 @@ Import, select pom.xml
 
 Run it on tomcat
 
+##Login##
+
+![alt text](ScreenShot/login.png)
+
 ##Query##
 
 **Food List:** user can see all food products here.
 
-![alt text](
+![alt text](ScreenShot/FoodList.png)
 
 **3 Weeks Left Food List:** user can see food products which expiration date is 14~21 days after the query date here.
 
-![alt text](
+![alt text](ScreenShot/foodquery.png)
 
 **2 Weeks Left Food List:** user can see food products which expiration date is 7~14 days after the query date here.
 
-![alt text](
-
 **1 Week Left Food List:** user can see food products which expiration date is 0~7 days after the query date here.
 
-![alt text](
+![alt text](ScreenShot/Set1weektoDonate.png)
+
+##Set Strategy##
+
+User can make decisions about the sales according to the query.
+
+![alt text](ScreenShot/SetStrategy.png)
+
+##Analysis##
+
+**Monthly donated food value analysis**
+The grocery donate expired food every month, but they never know how much food they donated, and whether they need to donate more in the next month. For helping them make better business decisions, we build a data analytics system that will tell you the food value you donated each month. Everything you donated is on the single graph, which help you to make smart decisions 
+![alt text](ScreenShot/chart1.png)
+
+**Discount strategy analytics platform**
+To make smart discount strategy for the future, you must analyze the precious discount strategy and the sales situation under this discount strategy. The overall discount strategy in the past is in the data, we built a visualization tool for you to analyze the discount strategy, and help you decide what strategy you are going to take in the future.
+
+![alt text](ScreenShot/chart2.png)
+
+**Average donated food analysis**
+Besides the tools we have above, we also built a tool to analyze the average donated food value. This is a complement to the monthly donated food analysis, and will help the user to make business strategy.
+
+![alt text](ScreenShot/chart3.png)
+
+**Real time sales data analysis**
+The only criteria to judge if a business strategy is successful or not is the sales data under current strategy. In order to help user make quick and smart business decisions, we built a sales data analysis tool. The sales data displayed is the real time sales data under the strategy you set. If you found the strategy does not work, you can simply change the strategy really quick, and see how it works under the new strategy. But adjusting the strategy, we help the user maximize their profits.
+
+![alt text](ScreenShot/chart4.png)
 
 ##Database Design##
 

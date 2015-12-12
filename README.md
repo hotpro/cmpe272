@@ -65,6 +65,10 @@ The only criteria to judge if a business strategy is successful or not is the sa
 
 ##Database Design##
 
+![alt text](ScreenShot/database.png)
+
+![alt text](ScreenShot/mongolab.png)
+
 >AccountInfo {
 
     String id

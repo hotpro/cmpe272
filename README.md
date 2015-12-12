@@ -18,7 +18,21 @@ Run it on tomcat
 
 ##Query##
 
-*Food List:* user can see all food products here.
+**Food List:** user can see all food products here.
+
+![alt text](
+
+**3 Weeks Left Food List:** user can see food products which expiration date is 14~21 days after the query date here.
+
+![alt text](
+
+**2 Weeks Left Food List:** user can see food products which expiration date is 7~14 days after the query date here.
+
+![alt text](
+
+**1 Week Left Food List:** user can see food products which expiration date is 0~7 days after the query date here.
+
+![alt text](
 
 ##Database Design##
 
@@ -82,49 +96,46 @@ Run it on tomcat
     7: get all the food that will expire within 1 week
     discount: 9: 90 % OFF,  1: 10 % OFF, -1: Donated
     return "SUCCESS", "FAIL"
-
-    "/food/analysis/donation", method = RequestMethod.GET
-    {
-    "years": [
-    "2015",
-    "2016",
-    "2017",
-    "2018",
-    "2019"
-   ],
-    "numbers": [
-    1838,
-    1749,
-    1846,
-    0,
-    0
-    ]
-    }
-
-    "/food/analysis/discount/top", method = RequestMethod.GET
-    [
-    {
-    "disCountMsg": "1 % OFF",
-    "count": 800
-    },
-    {
-    "disCountMsg": "5 % OFF",
-    "count": 782
-    },
-    {
-    "disCountMsg": "3 % OFF",
-    "count": 774
-    },
-    {
-    "disCountMsg": "9 % OFF",
-    "count": 774
-    },
-    {
-    "disCountMsg": "4 % OFF",
-    "count": 766
-    }
-    ]
-
+     "/food/analysis/donation", method = RequestMethod.GET
+     {
+     "years": [
+     "2015",
+     "2016",
+     "2017",
+     "2018",
+     "2019"
+     ],
+     "numbers": [
+     1838,
+     1749,
+     1846,
+     0,
+     0
+      ]
+      }
+     "/food/analysis/discount/top", method = RequestMethod.GET
+     [
+     {
+     "disCountMsg": "1 % OFF",
+     "count": 800
+     },
+     {
+     "disCountMsg": "5 % OFF",
+     "count": 782
+     },
+     {
+     "disCountMsg": "3 % OFF",
+     "count": 774
+     },
+     {
+     "disCountMsg": "9 % OFF",
+     "count": 774
+     },
+     {
+     "disCountMsg": "4 % OFF",
+     "count": 766
+     }
+     ]
     "/food/analysis/discountstat", method = RequestMethod.GET
     [
     {
@@ -156,6 +167,5 @@ Run it on tomcat
     "off10": 0,
     "off50": 0,
     "donation": 0
-    
     }
     ]
